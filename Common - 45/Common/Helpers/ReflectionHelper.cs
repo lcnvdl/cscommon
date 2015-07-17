@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Script.Serialization;
 using Common.Delegates;
-using Common.Helpers.Ext.Reflection;
+using Common.Ext.Reflection;
 using Common.Web;
 
 namespace Common.Helpers

@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Common.Helpers;
+using System;
 using System.Linq;
 
-namespace Common.Helpers.Ext.Numbers
+namespace Common.Ext.Numbers
 {
     public static class NumbersExt
     {
@@ -12,7 +13,7 @@ namespace Common.Helpers.Ext.Numbers
     }
 }
 
-namespace Common.Helpers.Ext.Strings
+namespace Common.Ext.Strings
 {
     public static class StringExt
     {
@@ -33,7 +34,7 @@ namespace Common.Helpers.Ext.Strings
     }
 }
 
-namespace Common.Helpers.Ext.Arrays
+namespace Common.Ext.Arrays
 {
     public static class ArraysExt
     {
@@ -45,7 +46,7 @@ namespace Common.Helpers.Ext.Arrays
     }
 }
 
-namespace Common.Helpers.Ext.Reflection
+namespace Common.Ext.Reflection
 {
     [AttributeUsage(
            AttributeTargets.Property | AttributeTargets.Field |
