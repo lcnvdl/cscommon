@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72031DD4-EF8D-407E-A98B-84E0D51234B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Delegates\Bool_Object.cs" />
+    <Compile Include="Delegates\Bool_String.cs" />
+    <Compile Include="Delegates\Bool_StringString.cs" />
+    <Compile Include="Delegates\Object_Object.cs" />
+    <Compile Include="Delegates\Object_String.cs" />
+    <Compile Include="Delegates\Object_Tinf.cs" />
+    <Compile Include="Delegates\Object_Void.cs" />
+    <Compile Include="Delegates\String_Void.cs" />
+    <Compile Include="Delegates\T_Object.cs" />
+    <Compile Include="Delegates\Void_Bool.cs" />
+    <Compile Include="Delegates\Void_Exception.cs" />
+    <Compile Include="Delegates\Void_ExceptionString.cs" />
+    <Compile Include="Delegates\Void_Int.cs" />
+    <Compile Include="Delegates\Void_IntInt.cs" />
+    <Compile Include="Delegates\Void_Object.cs" />
+    <Compile Include="Delegates\Void_String.cs" />
+    <Compile Include="Delegates\Void_StringString.cs" />
+    <Compile Include="Delegates\Void_Void.cs" />
+    <Compile Include="Exceptions\Excepcion.cs" />
+    <Compile Include="Exceptions\ExcepcionCuitInvalido.cs" />
+    <Compile Include="Exceptions\IncoherenceException.cs" />
+    <Compile Include="Exceptions\QueueException.cs" />
+    <Compile Include="Operations\Binary.cs" />
+    <Compile Include="Helpers\Extension.cs" />
+    <Compile Include="Helpers\HashingHelper.cs" />
+    <Compile Include="Operations\Parsing.cs" />
+    <Compile Include="Operations\TokenGen.cs" />
+    <Compile Include="Web\IpExt.cs" />
+    <Compile Include="Web\JSON.cs" />
+    <Compile Include="Helpers\MailCreator.cs" />
+    <Compile Include="Operations\MathExt.cs" />
+    <Compile Include="Helpers\ReflectionHelper.cs" />
+    <Compile Include="Helpers\SConverter.cs" />
+    <Compile Include="Helpers\Serializer.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Helpers\StringToHtml.cs" />
+    <Compile Include="Helpers\UrlFileHelper.cs" />
+    <Compile Include="Helpers\ValidationHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\IValidator.cs" />
+    <Compile Include="Validators\ValidadorUrl.cs" />
+    <Compile Include="Validators\ValidatorAmount.cs" />
+    <Compile Include="Validators\ValidatorCaptcha.cs" />
+    <Compile Include="Validators\ValidatorCuit.cs" />
+    <Compile Include="Validators\ValidatorEmail.cs" />
+    <Compile Include="Validators\ValidatorEmptyField.cs" />
+    <Compile Include="Validators\ValidatorFolder.cs" />
+    <Compile Include="Validators\ValidatorHash.cs" />
+    <Compile Include="Validators\ValidatorInput.cs" />
+    <Compile Include="Validators\ValidatorMaxLength.cs" />
+    <Compile Include="Validators\ValidatorNombre.cs" />
+    <Compile Include="Validators\ValidatorPassword.cs" />
+    <Compile Include="Validators\ValidatorUser.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
