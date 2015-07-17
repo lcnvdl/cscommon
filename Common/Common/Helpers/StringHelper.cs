@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Common.Helpers
 {
     public static class StringHelper
     {
-        public static string GenerateSlug(this string phrase)
+        public static string GenerateSlug(string phrase)
         {
-            string str = phrase.RemoveAccent().ToLower();
+            string str = RemoveAccent(phrase).ToLower();
             // invalid chars           
             str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
             // convert multiple spaces into one space   
@@ -20,13 +18,13 @@ namespace Common.Helpers
             return str;
         }
 
-        public static string RemoveAccent(this string txt)
+        public static string RemoveAccent(string txt)
         {
             byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(txt);
             return System.Text.Encoding.ASCII.GetString(bytes);
         }
 
-        public static string Capitalize(this string str)
+        public static string Capitalize(string str)
         {
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -36,7 +34,7 @@ namespace Common.Helpers
                 return str.ToUpper().Remove(1) + str.Substring(1);
         }
 	
-        public static string FromUTF8(this string str)
+        public static string FromUTF8(string str)
         {
             string procesado = str;
             procesado = procesado.Replace("&nbsp;", "");
@@ -56,7 +54,7 @@ namespace Common.Helpers
             return procesado;
         }
 
-        public static string ToUTF8(this string str)
+        public static string ToUTF8(string str)
         {
             string procesado = str;
             procesado = procesado.Replace("&", "&amp;");
@@ -75,7 +73,7 @@ namespace Common.Helpers
             return procesado;
         }
 		
-		public static int Count(this string str, char find)
+		public static int Count(string str, char find)
 		{
 			int count = 0;
 			for(int i = 0; i < str.Length; i++)
@@ -87,7 +85,7 @@ namespace Common.Helpers
 			return count;
 		}
 
-        public static string[] SplitAndTrim(this string str, char separator)
+        public static string[] SplitAndTrim(string str, char separator)
         {
             List<string> result = new List<string>();
             foreach (var s in str.Split(separator))

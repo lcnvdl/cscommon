@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Reflection;
 using System.Web.Script.Serialization;
-using System.Linq;
 using Common.Delegates;
-using Common.Helpers.Extension;
+using Common.Helpers.Ext.Reflection;
 using Common.Web;
 
 namespace Common.Helpers
@@ -32,7 +32,7 @@ namespace Common.Helpers
         /// <param name="caseSensitive"></param>
         public static void MatchObjects<T>(object matcher, ref T matched, bool caseSensitive)
         {
-            var matchedProps = GetMatchedProps<T>(matcher, matched, caseSensitive);
+            var matchedProps = GetMatchedProps(matcher, matched, caseSensitive);
 
             foreach (var property in matcher.GetType().GetProperties())
             {
@@ -49,7 +49,7 @@ namespace Common.Helpers
             }
         }
 
-        public static IEnumerable<T> FromDatatable<T>(DataTable dt) where T: class, new()
+        public static IEnumerable<T> FromDatatable<T>(DataTable dt) where T : class, new()
         {
             foreach (DataRow row in dt.Rows)
             {
@@ -72,7 +72,7 @@ namespace Common.Helpers
             }
         }
 
-        public static bool FromDatatable<T>(DataTable dt, ref T matched) 
+        public static bool FromDatatable<T>(DataTable dt, ref T matched)
         {
             return FromDatatable<T>(dt, ref matched, null);
         }
@@ -132,7 +132,7 @@ namespace Common.Helpers
         public static object GetPropertyValue(object obj, string propertyName)
         {
             PropertyInfo property = obj.GetType().GetProperty(propertyName);
-            if(property.PropertyType.IsEnum)
+            if (property.PropertyType.IsEnum)
                 return (int)property.GetValue(obj, null);
             else
                 return property.GetValue(obj, null);
@@ -239,5 +239,6 @@ namespace Common.Helpers
 
             return true;
         }
+
     }
 }
