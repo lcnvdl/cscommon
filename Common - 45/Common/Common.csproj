@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\SerializableDictionary.cs" />
     <Compile Include="Delegates\Bool_Object.cs" />
     <Compile Include="Delegates\Bool_String.cs" />
     <Compile Include="Delegates\Bool_StringString.cs" />
