@@ -95,6 +95,7 @@
     <Compile Include="Exceptions\ExcepcionCuitInvalido.cs" />
     <Compile Include="Exceptions\IncoherenceException.cs" />
     <Compile Include="Exceptions\QueueException.cs" />
+    <Compile Include="IO\Embedded.cs" />
     <Compile Include="Operations\Binary.cs" />
     <Compile Include="Helpers\Extension.cs" />
     <Compile Include="Helpers\HashingHelper.cs" />
