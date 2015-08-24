@@ -5,7 +5,7 @@ namespace Common.IO
 {
     public static class Embedded
     {
-        private static void CopyEmbeddedResources(this Assembly assembly, string outputDir, string resourceLocation, params string[] files)
+        public static void CopyEmbeddedResources(this Assembly assembly, string outputDir, string resourceLocation, params string[] files)
         {
             foreach (string file in files)
             {
