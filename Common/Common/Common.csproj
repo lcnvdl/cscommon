@@ -76,9 +76,14 @@
     <Compile Include="Exceptions\ExcepcionCuitInvalido.cs" />
     <Compile Include="Exceptions\IncoherenceException.cs" />
     <Compile Include="Exceptions\QueueException.cs" />
+    <Compile Include="Ext\ArraysExt.cs" />
+    <Compile Include="Ext\FrameworkExt.cs" />
+    <Compile Include="Ext\NumbersExt.cs" />
+    <Compile Include="Ext\ReflectionExt.cs" />
+    <Compile Include="Ext\StringExt.cs" />
     <Compile Include="IO\Embedded.cs" />
     <Compile Include="Operations\Binary.cs" />
-    <Compile Include="Helpers\Extension.cs" />
+    <Compile Include="Ext\Extension.cs" />
     <Compile Include="Helpers\HashingHelper.cs" />
     <Compile Include="Operations\Parsing.cs" />
     <Compile Include="Operations\TokenGen.cs" />

@@ -1,7 +1,7 @@
 ﻿using Common.Helpers;
 using System;
 using System.Linq;
-
+/*
 namespace Common.Ext.Numbers
 {
     public static class NumbersExt
@@ -80,4 +80,4 @@ namespace Common.Ext.Reflection
             return Common.Helpers.ReflectionHelper.EqualsTo<T>(obj, mObj, caseSensitive);
         }
     }
-}
+}*/

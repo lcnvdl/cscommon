@@ -2,50 +2,6 @@
 using System;
 using System.Linq;
 
-namespace Common.Ext.Numbers
-{
-    public static class NumbersExt
-    {
-        public static bool Between<T>(this T actual, T lower, T upper) where T : IComparable<T>
-        {
-            return actual.CompareTo(lower) >= 0 && actual.CompareTo(upper) < 0;
-        }
-    }
-}
-
-namespace Common.Ext.Strings
-{
-    public static class StringExt
-    {
-        public static string Capitalize(this string str)
-        {
-            return StringHelper.Capitalize(str);
-        }
-
-        public static int Count(this string str, char find)
-        {
-            return StringHelper.Count(str, find);
-        }
-
-        public static string[] SplitAndTrim(this string str, char separator)
-        {
-            return StringHelper.SplitAndTrim(str, separator);
-        }
-    }
-}
-
-namespace Common.Ext.Arrays
-{
-    public static class ArraysExt
-    {
-        public static bool In<T>(this T source, params T[] list)
-        {
-            if (null == source) throw new ArgumentNullException("source");
-            return list.Contains(source);
-        }
-    }
-}
-
 namespace Common.Ext.Reflection
 {
     [AttributeUsage(
