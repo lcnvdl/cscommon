@@ -35,5 +35,10 @@ namespace Common.Ext.Strings
         {
             return StringHelper.SplitAndTrim(str, separator);
         }
+
+        public static string MaxLength(this string str, int maxLength)
+        {
+            return StringHelper.MaxLength(str, maxLength);
+        }
     }
 }

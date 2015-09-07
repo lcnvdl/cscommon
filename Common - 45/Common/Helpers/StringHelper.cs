@@ -95,5 +95,13 @@ namespace Common.Helpers
             }
             return result.ToArray();
         }
+
+        public static string MaxLength(string str, int maxLength)
+        {
+            if (string.IsNullOrEmpty(str) || str.Length <= maxLength)
+                return str;
+
+            return str.Remove(maxLength);
+        }
     }
 }
