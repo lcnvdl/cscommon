@@ -40,5 +40,15 @@ namespace Common.Ext.Strings
         {
             return StringHelper.MaxLength(str, maxLength);
         }
+
+        public static string ToBase64(this string str)
+        {
+            return StringHelper.ToBase64(str);
+        }
+
+        public static string FromBase64(this string str)
+        {
+            return StringHelper.FromBase64(str);
+        }
     }
 }

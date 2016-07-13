@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Common.Helpers
@@ -102,6 +104,16 @@ namespace Common.Helpers
                 return str;
 
             return str.Remove(maxLength);
+        }
+
+        public static string ToBase64(string str)
+        {
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(str));
+        }
+
+        public static string FromBase64(string str)
+        {
+            return Encoding.UTF8.GetString(Convert.FromBase64String(str));
         }
     }
 }
