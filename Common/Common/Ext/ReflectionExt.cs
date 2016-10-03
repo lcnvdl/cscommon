@@ -1,13 +1,11 @@
-﻿using Common.Helpers;
-using System;
-using System.Linq;
+﻿using System;
+using Common.Helpers;
 
 namespace Common.Ext.Reflection
 {
     [AttributeUsage(
            AttributeTargets.Property | AttributeTargets.Field |
-           AttributeTargets.Parameter | AttributeTargets.ReturnValue
-           , AllowMultiple = false)]
+           AttributeTargets.Parameter | AttributeTargets.ReturnValue)]
     public class ReflectionAttribute : Attribute
     {
         public string Name { get; set; }
@@ -22,18 +20,18 @@ namespace Common.Ext.Reflection
 
         public static T SetFrom<T>(this T mObj, object obj, bool caseSensitive) where T : class
         {
-            Common.Helpers.ReflectionHelper.MatchObjects<T>(obj, ref mObj, caseSensitive);
+            ReflectionHelper.MatchObjects(obj, ref mObj, caseSensitive);
             return mObj;
         }
 
         public static bool EqualsTo<T>(this T mObj, object obj) where T : class
         {
-            return Common.Helpers.ReflectionHelper.EqualsTo<T>(obj, mObj, true);
+            return ReflectionHelper.EqualsTo(obj, mObj, true);
         }
 
         public static bool EqualsTo<T>(this T mObj, object obj, bool caseSensitive) where T : class
         {
-            return Common.Helpers.ReflectionHelper.EqualsTo<T>(obj, mObj, caseSensitive);
+            return ReflectionHelper.EqualsTo(obj, mObj, caseSensitive);
         }
     }
 }

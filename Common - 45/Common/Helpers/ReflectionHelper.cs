@@ -20,7 +20,7 @@ namespace Common.Helpers
         ///// <param name="matched"></param>
         public static void MatchObjects<T>(object matcher, ref T matched)
         {
-            MatchObjects<T>(matcher, ref matched, true);
+            MatchObjects(matcher, ref matched, true);
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Common.Helpers
                 if (!caseSensitive)
                     name = name.ToLower();
 
-                if (property.CanRead && matchedProps.ContainsKey(name))
+                if (property.CanRead && matchedProps.ContainsKey(name) && matchedProps[name].CanWrite)
                 {
                     object targetValue = property.GetValue(matcher, null);
                     matchedProps[name].SetValue(matched, targetValue, null);
@@ -74,7 +74,7 @@ namespace Common.Helpers
 
         public static bool FromDatatable<T>(DataTable dt, ref T matched)
         {
-            return FromDatatable<T>(dt, ref matched, null);
+            return FromDatatable(dt, ref matched, null);
         }
 
         public static bool FromDatatable<T>(DataTable dt, ref T matched, Object_StringObject eval)
@@ -82,7 +82,7 @@ namespace Common.Helpers
             if (dt.Rows.Count == 0)
                 return false;
 
-            var row = dt.Rows[0] as DataRow;
+            var row = dt.Rows[0];
             var columns = dt.Columns.Cast<DataColumn>().ToList();
 
             foreach (var property in matched.GetType().GetProperties())
@@ -134,8 +134,7 @@ namespace Common.Helpers
             PropertyInfo property = obj.GetType().GetProperty(propertyName);
             if (property.PropertyType.IsEnum)
                 return (int)property.GetValue(obj, null);
-            else
-                return property.GetValue(obj, null);
+            return property.GetValue(obj, null);
         }
 
         public static bool ContainsAttribute<A>(PropertyInfo pi)
@@ -209,7 +208,7 @@ namespace Common.Helpers
 
         public static bool EqualsTo<T>(object matcher, T matched, bool caseSensitive)
         {
-            var matchedProps = GetMatchedProps<T>(matcher, matched, caseSensitive);
+            var matchedProps = GetMatchedProps(matcher, matched, caseSensitive);
 
             foreach (var property in matcher.GetType().GetProperties())
             {
