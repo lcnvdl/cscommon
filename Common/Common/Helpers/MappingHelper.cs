@@ -7,9 +7,9 @@ using System.Reflection;
 
 namespace Common.Helpers
 {
-    public class MappingHelper<TA, TB> 
-        where TA: class
-        where TB: class
+    public class MappingHelper<TA, TB>
+        where TA : class
+        where TB : class
     {
         private MapInfo Result { get; set; }
 
@@ -20,7 +20,7 @@ namespace Common.Helpers
 
         public MappingHelper<TA, TB> MapSameName(bool ignoreCase)
         {
-            var from= typeof(TA);
+            var from = typeof(TA);
             var to = typeof(TB);
 
             var fromMembers = Extract(from);
@@ -73,7 +73,7 @@ namespace Common.Helpers
         {
             if (m is PropertyInfo)
             {
-                return ((PropertyInfo)m).GetValue(o);
+                return ((PropertyInfo)m).GetValue(o, null);
             }
             else
             {
@@ -100,7 +100,7 @@ namespace Common.Helpers
 
             if (m is PropertyInfo)
             {
-                ((PropertyInfo)m).SetValue(o, parsedVal);
+                ((PropertyInfo)m).SetValue(o, parsedVal, null);
             }
             else
             {

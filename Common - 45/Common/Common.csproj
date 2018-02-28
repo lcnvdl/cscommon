@@ -97,11 +97,13 @@
     <Compile Include="Exceptions\QueueException.cs" />
     <Compile Include="Ext\ArraysExt.cs" />
     <Compile Include="Ext\FrameworkExt.cs" />
+    <Compile Include="Ext\RandomizerExt.cs" />
     <Compile Include="Ext\ReflectionExt.cs" />
     <Compile Include="Ext\NumbersExt.cs" />
     <Compile Include="Ext\StringExt.cs" />
     <Compile Include="Helpers\MappingHelper.cs" />
     <Compile Include="Helpers\Map\MapInfo.cs" />
+    <Compile Include="Helpers\Randomizer.cs" />
     <Compile Include="IO\Embedded.cs" />
     <Compile Include="Operations\Binary.cs" />
     <Compile Include="Helpers\HashingHelper.cs" />

@@ -14,7 +14,7 @@ namespace Common.Helpers.Map
         {
             From = new Dictionary<string, MemberInfo>();
             To = new Dictionary<string, MemberInfo>();
-            FromTo = new Dictionary<string,string>();
+            FromTo = new Dictionary<string, string>();
             ToFrom = new Dictionary<string, string>();
         }
 
